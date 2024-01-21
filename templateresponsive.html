@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsivetemplate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="./responsivestyle.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            width: 100%;
+        }
+
+        .header1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px;
+            padding: 10px;
+            list-style-type: none;
+        }
+
+        .header1 a {
+            text-decoration: none;
+            color: rgb(24, 24, 24);
+        }
+
+        .header1 a:hover {
+            color: orange;
+            transition: .4s;
+        }
+
+        .header2 img {
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .text {
+            position: absolute;
+            top: 600px;
+            left: 80px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: rgb(37, 36, 36);
+        }
+
+        p {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn1 {
+            background-color: #1dbf7f;
+            text-decoration: none;
+            padding: 18px 50px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .btn1:hover {
+            background-color: #fff;
+            color: black;
+        }
+
+        .circle-yellow {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: rgb(241, 197, 14);
+            text-align: center;
+            padding: 140px;
+            display: flex;
+            gap: 15px;
+            margin: 10px 900px;
+            text-align: center;
+        }
+
+        .circle-yellow>.fa-phone,
+        h3 {
+            text-align: center;
+            color: white;
+            display: inline-block;
+        }
+
+        .lists-major {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 10px;
+        }
+
+        .list-1 {
+            width: 550px;
+        }
+
+        .list-2 {
+            width: 550px;
+        }
+
+        .list-1-1>li,
+        .list-1-2>li {
+            margin: 20px 40px;
+            padding: 15px;
+            font-size: 17px;
+            list-style-image: url(../check.png);
+        }
+
+        .lists-major-top>h2 {
+            color: rgb(21, 20, 20);
+            font-size: 30px;
+            margin-left: 80px;
+            margin-bottom: 20px;
+        }
+
+        .pricelist {
+            width: 100%;
+        }
+
+        .top-box {
+            width: 90%;
+            margin: 70px 70px 50px 70px;
+        }
+
+        .top-box>h2 {
+            margin-bottom: 50px;
+            font-size: 30px;
+        }
+
+        .main-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            /* gap:     100px; */
+        }
+
+        .box1 {
+            width: 280px;
+            height: 410px;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        .box-list1 {
+            list-style: square inside;
+            margin-bottom: 40px;
+        }
+
+        .box-list1 li {
+            /* line-height  : 40px; */
+            padding: 5px;
+            letter-spacing: 1px;
+            font-size: 17px;
+
+        }
+
+        .box-list1 h4 {
+            /* margin: 25px; */
+            margin-top: 30px;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .box-list1 h1 {
+            font-size: 75px;
+            color: rgb(241, 197, 14);
+        }
+
+        .box1>a {
+            text-decoration: none;
+            padding: 15px 45px;
+            background-color: rgb(241, 197, 14);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .box1>a:hover {
+            background-color: antiquewhite;
+            color: black;
+        }
+
+        .inf-box-main {
+            width: 100%;
+            min-height: 90vh;
+        }
+
+        .inf-box-sub>h2 {
+            margin: 100px 10px 80px 120px;
+            font-size: 35px;
+        }
+
+        .inf-box-sub {
+            width: 100%;
+        }
+
+        .img-inf-box {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        .img-inf-box-sub1 {
+            width: 500px;
+            height: 300px;
+            padding: 40px;
+            background-color: #f2f2f2;
+        }
+
+        .img-inf-box-sub2 {
+            width: 500px;
+            height: 300px;
+            padding: 40px;
+            background-color: #f2f2f2;
+        }
+
+        .img-inf-box-sub1>h3,
+        .img-inf-box-sub2>h3 {
+            color: rgb(24, 24, 24);
+            font-size: 23px;
+            margin-top: 30px;
+        }
+
+        .img-inf-box-sub1>a>i,
+        .img-inf-box-sub2>a>i {
+            color: #1dbf7f;
+            font-size: 50px;
+            margin-left: 18px;
+        }
+
+        .img-inf-box-sub1>img {
+            border-radius: 100px;
+            position: absolute;
+            top: -40px;
+            left: 130px;
+        }
+
+        .img-inf-box-sub2>img {
+            border-radius: 100px;
+            position: absolute;
+            top: -40px;
+            /* left: 100px; */
+
+        }
+
+        .feedbk-last {
+            width: 100%;
+            min-height: 70vh;
+
+        }
+
+        .feedbk-last-sub {
+            width: 100%;
+            position: relative;
+        }
+
+        .form-1 {
+            position: absolute;
+            top: 300px;
+            left: 130px;
+            /* margin: 10px; */
+            padding: 20px;
+            width: 650px;
+            height: 500px;
+            background-color: #fff;
+        }
+
+        .form-1>input {
+            padding: 10px;
+            width: 100%;
+            margin-top: 20px;
+            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
+        }
+
+        .form-1>label {
+            color: black;
+            font-weight: 600;
+        }
+
+        .form-1>textarea {
+            border: none;
+            outline: none;
+            border-bottom: 2px solid black;
+        }
+
+        .form-1>textarea::placeholder {
+            font-size: 18px;
+        }
+
+        .form-1>input::placeholder {
+            font-size: 18px;
+        }
+
+        .form-1>button {
+            width: 100%;
+            background-color: #1dbf7f;
+            padding: 13px;
+            border: none;
+            outline: none;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .form-1>button:hover {
+            background-color: #0fce82;
+        }
+
+        .feedbk-last-sub>h1 {
+            position: absolute;
+            font-size: 35px;
+            color: #fff;
+            margin: 80px 0px 10px 100px;
+
+        }
+        .footer{
+            width: 100%;
+            height: 40vh;
+            margin-top: 20px;
+            background-color: rgb(30, 31, 32);
+        }
+        .footer>center>p{
+            margin-top: 100px;
+            color: #fff;
+            font-size: 15px;
+        }
+        /* .footer>center>p{
+            margin-top: 20px;
+            color: #fff;
+            font-size: 15px;
+        } */
+        .footer>center>p>a{
+            text-decoration: none;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        @media (max-width:400px) {
+            .header2>.text {
+                top: 300px;
+                left: 2px;
+            }
+
+            .circle-yellow {
+                margin: 0px 40px;
+            }
+
+            .lists-major {
+                flex-direction: column;
+                /* margin-top: 300px; */
+            }
+
+            .list-1,
+            .list-2 {
+                width: 100%;
+                margin: 10px;
+            }
+
+            .list-1-1>li,
+            .list-1-2>li {
+                padding: 10px;
+                /* margin-left: 50px; */
+                margin: 10px 40px;
+                font-size: 17px;
+            }
+
+            .lists-major-top>h2 {
+                margin-top: 380px;
+                margin-left: 40px;
+                /* margin-bottom: 20px; */
+            }
+
+            .main-box {
+                flex-direction: column;
+            }
+
+            .top-box {
+                margin-left: 20px;
+            }
+
+            .box1 {
+                animation: box 2s infinite linear;
+                animation-delay: 5s;
+            }
+
+            @keyframes box {
+                0% {
+                    transform: translateX(150px);
+                }
+
+            }
+
+            .img-inf-box {
+                flex-direction: column;
+            }
+
+            .img-inf-box-sub1,
+            .img-inf-box-sub2 {
+                width: 90%;
+                margin-top: 50px;
+            }
+
+            .img-inf-box-sub1>img {
+                left: 50px;
+                top: 0px;
+            }
+
+            .img-inf-box-sub2>img {
+                top: 370px;
+                left: 50px;
+            }
+
+            .inf-box-sub>h2 {
+                margin: 20px;
+            }
+
+            .form-1 {
+                top: 100px;
+                left: 40px;
+                width: 300px;
+
+            }
+
+            .form-1>textarea {
+                width: 260px;
+            }
+
+            .feedbk-last-sub>h1 {
+                top: -50px;
+                left: -80px;
+                font-size: 20px;
+            }
+
+            .feedbk-last {
+                margin-top: 40px;
+            }
+            .footer{
+                height: 20vh;
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul class="header1">
+            <li><a href="" style="color: rgb(8, 197, 8);">Home 1</a></li>
+            <li><a href="">About 1</a></li>
+            <li><a href="">Contact 1</a></li>
+        </ul>
+    </header>
+
+    <section class="header2">
+        <img src="https://images01.nicepagecdn.com/a1389d7bc73adea1e1c1fb7e/6423feb872285f738e2732f7/pexels-fauxels-3184405copy.jpg"
+            alt="" width="100%">
+        <div class="txtcirle">
+            <div class="text">
+                <h1> Find your <br> perfect niche</h1>
+                <p>Sample text. Click to select the Text Element.</p>
+                <a href="https://nicepage.com/wordpress-themes" class="btn1">READ MORE</a>
+            </div>
+
+            <div class="circle-yellow">
+                <i class="fa-solid fa-phone"></i>
+                <h3>+12(546)789</h3>
+            </div>
+
+        </div>
+        <div class="lists-major-top">
+            <h2>IT Solution Strategy <br>Development For Your Business</h2>
+
+            <div class="lists-major">
+                <div class="list-1">
+                    <ul class="list-1-1">
+                        <li> Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day
+                            real
+                            less till dear read. Considered use dispatched melancholy sympathize discretion led. </li>
+                        <li> Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day
+                            real
+                            less till dear read. Considered use dispatched melancholy sympathize discretion led. </li>
+                        <li> Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day
+                            real
+                            less till dear read. Considered use dispatched melancholy sympathize discretion led. </li>
+                    </ul>
+                </div>
+                <div class="list-2">
+                    <ul class="list-1-2">
+                        <li> Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day
+                            real
+                            less till dear read. Considered use dispatched melancholy sympathize discretion led. </li>
+                        <li> Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day
+                            real
+                            less till dear read. Considered use dispatched melancholy sympathize discretion led. </li>
+                        <li> Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day
+                            real
+                            less till dear read. Considered use dispatched melancholy sympathize discretion led. </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="pricelist">
+            <div class="top-box">
+                <h2>Simple prices, flexible <br> options & nothing hidden</h2>
+                <div class="main-box">
+                    <div class="box1">
+                        <ul class="box-list1">
+                            <h4>Free</h4>
+                            <h1>$0</h1>
+                            <li>15 Users</li>
+                            <li>Feature 2</li>
+                            <li>Feature 3</li>
+                            <li>Feature 4</li>
+                        </ul>
+                        <a href="">GET PLAN</a>
+                    </div>
+                    <div class="box1" style="background-color:#fff;">
+                        <ul class="box-list1">
+                            <h4>Individual</h4>
+                            <h1>$0</h1>
+                            <li>15 Users</li>
+                            <li>Feature 2</li>
+                            <li>Feature 3</li>
+                            <li>Feature 4</li>
+                        </ul>
+                        <a href="">GET PLAN</a>
+                    </div>
+                    <div class="box1" style="background-color: #1dbf7f;">
+                        <ul class=" box-list1">
+                            <h4>Business</h4>
+                            <h1>$0</h1>
+                            <li>15 Users</li>
+                            <li>Feature 2</li>
+                            <li>Feature 3</li>
+                            <li>Feature 4</li>
+                        </ul>
+                        <a href="">GET PLAN</a>
+                    </div>
+                    <div class="box1" style="background-color: #fff;">
+                        <ul class="box-list1">
+                            <h4>Premium</h4>
+                            <h1>$0</h1>
+                            <li>15 Users</li>
+                            <li>Feature 2</li>
+                            <li>Feature 3</li>
+                            <li>Feature 4</li>
+                        </ul>
+                        <a href="">GET PLAN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inf-box-main">
+            <div class="inf-box-sub">
+                <h2>Meet The Team <br> Our Professionals</h2>
+                <div class="img-inf-box">
+                    <div class="img-inf-box-sub1">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.AwGBn0RaiFXEpXemdj-2LQHaLG?w=186&h=279&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+                            alt="" width="100" height="100">
+                        <h3>Nina Scavo</h3>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat</p>
+                        <a href=""><i class="fa-brands fa-facebook" aria-hidden="true" title="facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter" aria-hidden="true" title="twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram" aria-hidden="true" title="instagram"></i></a>
+                    </div>
+
+                    <div class="img-inf-box-sub2">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.39znAlwKUyAAbOdVos6mzQHaLH?w=186&h=279&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+                            alt="" width="100" height="100">
+                        <h3>Linda Kim</h3>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat</p>
+                        <a href=""><i class="fa-brands fa-facebook" aria-hidden="true" title="facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter" aria-hidden="true" title="twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram" aria-hidden="true" title="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="feedbk-last">
+            <div class="feedbk-last-sub">
+                <h1>Nam ultrices ultrices nec tortor <br> pulvinar esteras loremips est orem.</h1>
+                <img src="https://images01.nicepagecdn.com/a1389d7bc73adea1e1c1fb7e/6423feb872285f738e2732f7/pexels-fauxels-3184405copy.jpg"
+                    alt="" width="100%">
+                <form action="" class="form-1">
+                    <label for="name">Name</label><br>
+                    <input type="text" name="" id="name" placeholder="Enter your Name"><br>
+                    <input type="text" name="" list="list11" placeholder="item 1">
+                    <datalist id="list11">
+                        <option value="select1">Item1</option>
+                        <option value="select2">Item2</option>
+                        <option value="select3">Item3</option>
+                    </datalist><br>
+                    <label for="phn">phone</label><br>
+                    <input type="tel" name="" id="phn" placeholder="Enter your phone(e.g.+14155552675)"><br>
+                    <label for="">Message</label><br>
+                    <textarea name="" id="" cols="97" rows="5" placeholder="Enter your message"></textarea><br>
+                    <button>SUBMIT</button>
+
+                </form>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <center>
+                <p>Sample text. Click to select the Text Element.</p>
+                <p><a href="">CSS Templates </a>created with <a href="">Best Free Website Builder.</a></p>
+            </center>
+        </div>
+
+    </section>
+
+
+
+</body>
+
+</html>
